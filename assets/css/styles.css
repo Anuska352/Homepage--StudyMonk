@@ -63,6 +63,28 @@ span {
     border-color: transparent;
 }
 
+/* All Animations CSS  */
+@keyframes video{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+@keyframes bounceTop-1{
+    0%,100% {
+        transform: translateY(-30px);
+
+    }
+    50%{
+       transform: translateY(0px); 
+    }
+}
+
 /* Navbar CSS  */
 .navbar-area{
     position: absolute;
@@ -140,4 +162,38 @@ span {
 }
 .header-hero-content ul{
     margin-top: 30px;
+}
+.header-hero-content ul li .header-video{
+  margin-left: 50px;
+}
+.header-hero-content .header-video{
+    position: relative;
+    margin-top: 6px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: #0898ef;
+    color: #fff;
+}
+
+.header-hero-content .header-video::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: rgba(8, 152, 231, .8);
+    z-index: -9;
+    animation: video 2s linear infinite;
+}
+
+.header-image {
+    position: relative;
+    padding-top: 80px;
+    animation: bounceTop-1 3s ease infinite;
 }
